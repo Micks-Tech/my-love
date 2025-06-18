@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #ff00ff, #ffff00);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-family: "Pacifico", cursive;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease;
+}
+
+.button {
+    margin-top: 30px;
+}
+
+button {
+    background: linear-gradient(45deg, #ff1493, #ff4500);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    font-family: "Pacifico", cursive;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.6);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#bounce {
+    animation: bounce 1.5s ease infinite;
+}
